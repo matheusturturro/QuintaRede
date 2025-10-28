@@ -1,0 +1,119 @@
+.carrossel-container {
+  margin-top: clamp(3rem, 8vw, 5rem);
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.carrossel-janela {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.16);
+}
+
+.carrossel-faixa {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carrossel-slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.carrossel-slide img {
+  display: block;
+  width: 100%;
+  height: clamp(260px, 52vw, 560px);
+  object-fit: cover;
+}
+
+.carrossel-botao {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.78);
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  font-size: 1.75rem;
+  color: #384e1b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carrossel-botao:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.carrossel-botao--anterior {
+  left: 1.1rem;
+}
+
+.carrossel-botao--proximo {
+  right: 1.1rem;
+}
+
+.carrossel-indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.carrossel-indicador {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: none;
+  background-color: rgba(56, 78, 27, 0.28);
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.carrossel-indicador--ativo {
+  width: 32px;
+  background: linear-gradient(135deg, #cbe49a, #7faa41);
+}
+
+@media (max-width: 768px) {
+  .carrossel-container {
+    margin-top: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .carrossel-janela {
+    border-radius: 22px;
+  }
+
+  .carrossel-botao {
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+  }
+
+  .carrossel-botao--anterior {
+    left: 0.8rem;
+  }
+
+  .carrossel-botao--proximo {
+    right: 0.8rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .carrossel-botao {
+    display: none;
+  }
+
+  .carrossel-slide img {
+    height: clamp(240px, 70vw, 380px);
+  }
+}

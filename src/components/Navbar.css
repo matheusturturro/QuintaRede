@@ -1,0 +1,121 @@
+/* ===== ESTILOS GERAIS DA NAVBAR ===== */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90px;
+}
+
+.navbar-list-container {
+  list-style: none;
+}
+
+.navbar-menu-container {
+  list-style: none;
+}
+
+.navbar-links-container a {
+  margin-right: 3rem;
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.navbar-links-container a:hover {
+  text-decoration: underline;
+}
+
+/* ===== MENU HAMBÚRGUER ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-hamburger {
+  display: none;
+  font-size: 1.9rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.navbar-hamburger:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Contêiner dos links (desktop) */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1000px) {
+  .navbar-links-container a {
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  /* Esconde os links padrão e mostra o ícone */
+  .navbar-hamburger {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f6f6;
+    text-align: center;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+  }
+
+  .navbar-links.active {
+    max-height: 420px;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 15px 0;
+  }
+
+  .navbar-links li {
+    margin: 10px 0;
+  }
+
+  .navbar-links li a {
+    display: block;
+    padding: 10px 0;
+  }
+}
